@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flask K8s Demo</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="card">
+    <div class="badge">🚀 Live App</div>
+    <h1>Name Greeter</h1>
+    <p class="subtitle">Type a name, hit Greet, see the magic.</p>
+
+    <form method="POST" class="form">
+      <input type="text" name="name" placeholder="Enter your name" required>
+      <button type="submit">Greet</button>
+    </form>
+
+    {% if greeting %}
+    <div class="result">
+      <p class="greeting">{{ greeting }}</p>
+      <p class="host">served by <span>{{ host }}</span></p>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
